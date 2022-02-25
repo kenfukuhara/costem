@@ -6,19 +6,26 @@
         "heading": {
           "type": "heading",
           "settings": {
+            "heading": "Image banner",
             "heading_size": "large"
           }
         },
         "text": {
-          "type": "text"
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
         },
         "button": {
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
-            "button_label_2": ""
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
@@ -30,8 +37,12 @@
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
+        "adapt_height_first_image": false,
         "desktop_content_position": "bottom-center",
         "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
@@ -40,10 +51,17 @@
       "type": "rich-text",
       "blocks": {
         "heading": {
-          "type": "heading"
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
         },
         "text": {
-          "type": "text"
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -51,6 +69,8 @@
         "text"
       ],
       "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
         "padding_top": 40,
         "padding_bottom": 0
       }
@@ -61,60 +81,203 @@
         "title": "Featured products",
         "collection": "all",
         "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
         "show_view_all": false,
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
         "show_secondary_image": true,
-        "padding_top": 28
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 28,
+        "padding_bottom": 36
       }
     },
     "collage": {
       "type": "collage",
       "blocks": {
         "collection-0": {
-          "type": "collection"
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
         },
         "product": {
-          "type": "product"
+          "type": "product",
+          "settings": {
+            "product": "",
+            "second_image": false
+          }
         },
         "collection-1": {
-          "type": "collection"
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
         }
       },
       "block_order": [
         "collection-0",
         "product",
         "collection-1"
-      ]
+      ],
+      "settings": {
+        "heading": "Multimedia collage",
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
     "video": {
       "type": "video",
       "settings": {
-        "heading": ""
+        "heading": "",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "multicolumn": {
       "type": "multicolumn",
       "blocks": {
         "column1": {
-          "type": "column"
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
         },
         "column2": {
-          "type": "column"
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
         },
         "column3": {
-          "type": "column"
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "690cc979-4e49-401f-b4b8-b48168fd90c5": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "column1",
         "column2",
-        "column3"
+        "column3",
+        "690cc979-4e49-401f-b4b8-b48168fd90c5"
       ],
       "settings": {
         "title": "",
         "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
         "column_alignment": "center",
         "background_style": "none",
-        "button_label": ""
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": false,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1645764641e21a32c9": {
+      "type": "custom-section",
+      "disabled": true,
+      "settings": {
+        "section_text": "",
+        "section_check": false
+      }
+    },
+    "164576472819efafd7": {
+      "type": "custom-section",
+      "disabled": true,
+      "settings": {
+        "section_text": "",
+        "section_check": false
+      }
+    },
+    "1645764652510da281": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "page": "",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "164576476376f1e539": {
+      "type": "custom-section",
+      "disabled": true,
+      "settings": {
+        "section_text": "書くってばよ！！！",
+        "section_check": false
+      }
+    },
+    "1645771171b9179cec": {
+      "type": "newsletter",
+      "disabled": true,
+      "blocks": {
+        "1645771171f218763d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails"
+          }
+        },
+        "1645771171f218763d-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
+          }
+        },
+        "1645771171f218763d-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "1645771171f218763d-0",
+        "1645771171f218763d-1",
+        "1645771171f218763d-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "16457712248bf85ac5": {
+      "type": "custom-section",
+      "settings": {
+        "section_text": "ここにテキストを書けばよろし？",
+        "section_check": false
       }
     }
   },
@@ -124,6 +287,12 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "1645764641e21a32c9",
+    "164576472819efafd7",
+    "1645764652510da281",
+    "164576476376f1e539",
+    "1645771171b9179cec",
+    "16457712248bf85ac5"
   ]
 }
