@@ -236,6 +236,13 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "1645855356b9fd1812": {
+      "type": "custom-section",
+      "settings": {
+        "section_text": "ここにテキストを書けばよろし？",
+        "section_check": false
+      }
     }
   },
   "order": [
@@ -246,6 +253,7 @@
     "video",
     "multicolumn",
     "1645764652510da281",
-    "1645771171b9179cec"
+    "1645771171b9179cec",
+    "1645855356b9fd1812"
   ]
 }
