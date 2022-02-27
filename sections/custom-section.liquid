@@ -18,7 +18,9 @@
   }
 {%- endstyle -%}
 
-<h1>{{ section.settings.section_text }}</h1>
+{% if section.settings.section_text != blank %}
+  <h1>{{ section.settings.section_text }}</h1>
+{% endif %}
 
 {% schema %}
 
