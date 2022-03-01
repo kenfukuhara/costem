@@ -236,6 +236,15 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "164613172562a7a2d0": {
+      "type": "page",
+      "settings": {
+        "page": "プロフィール-ポートフォリオ",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -246,6 +255,7 @@
     "video",
     "multicolumn",
     "1645764652510da281",
-    "1645771171b9179cec"
+    "1645771171b9179cec",
+    "164613172562a7a2d0"
   ]
 }
