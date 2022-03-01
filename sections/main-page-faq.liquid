@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="{{ 'section-main-page.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'section-main-page-faq.css' | asset_url }}" media="print" onload="this.media='all'"><!-- 追加 -->
+
+
+<noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'section-main-page-faq.css' | asset_url | stylesheet_tag }}</noscript><!-- 追加 -->
+
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+  <h1 class="main-page-title page-title h0">
+    {{ page.title | escape }}
+  </h1>
+  <div class="rte">
+    {{ page.content }}
+  </div>
+
+  <div class="faq-contauner">
+    <div class="tabs">
+      {% for block in section.blocks %}
+        {% assign item = block.settings %}
+        <input type="checkbox" class="tab-checkbox" id="tab-checkbox__{{ forloop.index }}">
+        <label for="tab-checkbox__{{ forloop.index }}" class="tab-label button button--primary">
+          {{ item.question }}
+        </label>
+        <div class="tab-content">
+          {{ item.answer }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "section",
+  "class": "faq-section",
+  "blocks": [
+    {
+      "name": "question",
+      "type": "faq",
+      "settings": [
+        {
+          "id": "question",
+          "label": "質問",
+          "type": "text",
+          "default": "質問を入力してください"
+        },
+        {
+          "id": "answer",
+          "label": "回答",
+          "type": "richtext",
+          "default": "<p>回答を入力してください</p>"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
