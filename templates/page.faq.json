@@ -2,6 +2,34 @@
   "sections": {
     "main": {
       "type": "main-page-faq",
+      "blocks": {
+        "0180bc07-c3ee-4066-b71a-a62b6de4ad77": {
+          "type": "faq",
+          "settings": {
+            "question": "質問を入力してください",
+            "answer": "<p>回答を入力してください<\/p>"
+          }
+        },
+        "5ec995df-427b-43d3-a136-9deb8f32767c": {
+          "type": "faq",
+          "settings": {
+            "question": "質問を入力してください",
+            "answer": "<p>回答を入力してください<\/p>"
+          }
+        },
+        "c5c75868-3c94-40d3-808d-756e93c12a29": {
+          "type": "faq",
+          "settings": {
+            "question": "質問を入力してください",
+            "answer": "<p>回答を入力してください<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "0180bc07-c3ee-4066-b71a-a62b6de4ad77",
+        "5ec995df-427b-43d3-a136-9deb8f32767c",
+        "c5c75868-3c94-40d3-808d-756e93c12a29"
+      ],
       "settings": {
       }
     }
