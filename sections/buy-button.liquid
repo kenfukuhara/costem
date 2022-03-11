@@ -1,0 +1,77 @@
+{%- assign product = all_products[section.settings.button_product] -%}
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+
+  <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
+    {% for variant in product.variants %}
+      <option value="{{ variant.id }}"
+        {%- if variant == current_variant %} selected="selected" {%- endif -%}
+      >
+        {{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+      </option>
+    {% endfor %}
+  </select>
+
+  <div class="product-form__error-message-wrapper product-form__error-message-wrapper--hidden{% if section.settings.enable_payment_button %} product-form__error-message-wrapper--has-payment-button{% endif %}"
+    data-error-message-wrapper
+    role="alert"
+  >
+    <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+  </div>
+
+  <div class="product-form__controls-group product-form__controls-group--submit">
+
+    <div class="product-form__item product-form__item--submit
+      {%- if section.settings.enable_payment_button %} product-form__item--payment-button {%- endif -%}"
+    >
+      <button type="submit" name="add"
+        {% unless current_variant.available %} aria-disabled="true"{% endunless %}
+        aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endunless %}"
+        class="c-button {% if section.settings.button_color == "white" %} c-button--wh {% else %} c-button--bl {% endif %} u-mt-16"
+        {% if settings.enable_ajax %}aria-haspopup="dialog"{% endif %}
+        data-add-to-cart>
+        <span data-add-to-cart-text>
+          {% unless current_variant.available %}
+            {{ 'products.product.sold_out' | t }}
+          {% else %}
+            {{ 'products.product.add_to_cart' | t }}
+          {% endunless %}
+        </span>
+        <span class="hide" data-loader>
+          {% include 'icon-spinner' %}
+        </span>
+      </button>
+
+    </div>
+  </div>
+{% endform %}
+
+{% schema %}
+{
+  "name": "カートに追加ボタン",
+  "settings": [
+    {
+      "type": "product",
+      "id": "button_product",
+      "label": "商品を選択"
+    },
+    {
+      "type": "select",
+      "id": "button_color",
+      "label": "ボタンの色を選択",
+      "options": [
+      {
+        "value": "black",
+        "label": "黒"
+      },
+      {
+        "value": "white",
+        "label": "白"
+      }
+    ],
+    "default": "white"
+    }
+  ]
+}
+{% endschema %}
